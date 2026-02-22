@@ -26,6 +26,10 @@ Add this to your `index.html`:
 | folder-path | Folder where images are stored |
 | images | Specific images to show, the order matters! (leave empty = random images for preview) |
 
+## Styling
+You will find all the styling within the `stlyes.css`
+
+
 # Navigation Component
 Changing `ANYTHING`, will affect both mobile and desktop versions!
 
@@ -46,16 +50,4 @@ Edit `navbar/navbar.html`:
     </div>
 
 ## Styling
-Change colors in `styles.css`:
-
-    :root {
-    /* Page background */
-    --body-background-color: black;
-    
-    /* Navbar colors */
-    --nav-bg: #202020;
-    --category-color: #d3d3d3;
-    --main-link-color: white;
-    --main-link-hover: #bdbdbd;
-    --sub-link-color: #929292;
-    --sub-link-hover: white;
+Change colors for the navbar as well as fonts' and padding within `navbar.css`
