@@ -26,27 +26,38 @@ function initNavigation() {
 
 function setupMobileMenu(toggleButton, menuElement) {
     if (!toggleButton || !menuElement) {
-        console.error('Mobile Nav Fehler:', {toggleButton, menuElement});
+        console.warn('mobile nav error');
         return;
     }
-    
-    console.log('✅ Mobile Menu gefunden:', toggleButton, menuElement);
-    
-    // Entfernen Sie das cloneNode und verwenden Sie den original Button
-    toggleButton.onclick = function(e) {
+
+
+    const newToggle = toggleButton.cloneNode(true);
+    toggleButton.parentNode.replaceChild(newToggle, toggleButton);
+
+
+    newToggle.addEventListener('click', (e) => {
         e.preventDefault();
         e.stopPropagation();
-        console.log('🔵 Button geklickt!');
         menuElement.classList.toggle('active');
-        console.log('Menu active:', menuElement.classList.contains('active'));
-    };
-    
-    // Wenn das nicht funktioniert, versuchen Sie addEventListener
-    toggleButton.addEventListener('click', function(e) {
-        e.preventDefault();
+    });
+
+
+    document.addEventListener('click', (e) => {
+        if (menuElement.classList.contains('active') &&
+            !menuElement.contains(e.target) &&
+            !newToggle.contains(e.target)) {
+            menuElement.classList.remove('active');
+        }
+    });
+
+    menuElement.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            menuElement.classList.remove('active');
+        });
+    });
+
+    menuElement.addEventListener('click', (e) => {
         e.stopPropagation();
-        console.log('🟢 Event-Listener ausgelöst!');
-        menuElement.classList.toggle('active');
     });
 }
 
