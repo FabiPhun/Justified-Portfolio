@@ -94,7 +94,7 @@ You can have as many gallery components as you like and they will all function s
 Changes made to the structure will automatically reflect across all screen sizes, mobile and desktop.
 
 ### Structure
-Edit `navbar/navbar.html to manage` your site links:
+Edit `navbar/navbar.html` to manage your site links:
 ```html
 <div class="nav-content">
     <ul class="nav-section main-section">
