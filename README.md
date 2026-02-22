@@ -11,14 +11,14 @@ A responsive gallery template designed for image-heavy portfolios. This system p
 ---
 
 ## Gallery Component
-The gallery is initialized by adding a wrapper to your index.html. 
+The gallery is initialized by adding a wrapper to your `index.html.`
 
 ### Implementation
     <div
         id="0"
         class="gallery_wrapper"
-        image-spacing="5px"
-        maxImages="4"
+        image-spacing=""
+        maxImages=""
         folder-path=""
         images=""
         fc-gallery="list"
@@ -26,14 +26,22 @@ The gallery is initialized by adding a wrapper to your index.html.
      </div>
 
 ### Configuration Table
-| Setting | What it does |
-|---------|--------------|
-| image-spacing | Gap between images (px, vw, %) |
-| maxImages | Max images per row |
-| folder-path | Folder where images are stored |
-| images | Specific images to show |
+| Setting | What it does | Example |
+|---------|--------------|---------|
+| `image-spacing` | Gap between images (px, vw, %) | `image-spacing="5px"` |
+| `maxImages` | Max images per row | `maxImages="4"` |
+| `folder-path` | Folder where images are stored | `folder-path="./images/cats"` |
+| `images` | Specific images to show | `images="scruffy.png, pluto.jpg, chloe.gif, ./whitecats/dimples.png` |
+| `row-stretch` | stretch images to whole row if less than `maxImages` | `row-stretch="4"` |
 
-Note: If the images attribute is left empty, the gallery will default to random images for preview purposes.
+#### Note:
+
+
+If the `images` attribute is left empty, the gallery will default to random images for preview purposes.
+
+If the `image-spacing` and `row-stretch` are without value, they will return to a certain default.
+
+You can have as many gallery components as you like and they will all function seperately.
 
 ---
 
