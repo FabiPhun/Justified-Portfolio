@@ -23,31 +23,22 @@ The gallery is initialized by adding a wrapper to your index.html.
     </div>
 
 ### Configuration Table
-Attribute: image-spacing
-Function: Defines the gap between images.
-Supported Units: px, vw, %
-
-Attribute: maxImages
-Function: Sets the maximum images per row.
-Supported Units: Integer
-
-Attribute: folder-path
-Function: The directory path where images are stored.
-Supported Units: String (Path)
-
-Attribute: images
-Function: Specific filenames to display (order matters).
-Supported Units: String (CSV)
+| Setting | What it does |
+|---------|--------------|
+| image-spacing | Gap between images (px, vw, %) |
+| maxImages | Max images per row |
+| folder-path | Folder where images are stored |
+| images | Specific images to show |
 
 Note: If the images attribute is left empty, the gallery will default to random images for preview purposes.
 
 ---
 
 ## Navigation Component
-The navigation system is designed for high maintainability. Changes made to the structure will automatically reflect across all screen sizes.
+Changes made to the structure will automatically reflect across all screen sizes, mobile and desktop.
 
 ### Structure
-Edit navbar/navbar.html to manage your site links:
+Edit `navbar/navbar.html to manage` your site links:
 
     <div class="nav-content">
     <ul class="nav-section main-section">
@@ -65,7 +56,7 @@ Edit navbar/navbar.html to manage your site links:
 ## Styling and Customization
 The visual presentation is separated into two primary CSS files for easier management:
 
-* Gallery Styling: Modify styles.css to adjust image transitions, borders, and grid behavior.
-* Navbar Styling: Modify navbar.css to update typography, color schemes, and padding for the navigation menu.
+* Gallery Styling: Modify `styles.css` to adjust the body and its' content.
+* Navbar Styling: Modify `navbar.css` to update typography, color schemes, and padding for the navigation menu.
 
 ---
