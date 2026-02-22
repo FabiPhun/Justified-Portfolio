@@ -231,8 +231,23 @@
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1001;
+    z-index: 999;  /* <- Niedriger als das Menü */
     /* Remove pointer-events: none */
+}
+
+.mobile-nav-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: var(--mobile-nav-width);
+    background-color: var(--nav-bg);
+    transform: translateX(-100%);
+    transition: transform var(--transition-menu);
+    overflow-y: auto;
+    z-index: 1000;  /* <- Höher als der Header */
+    pointer-events: auto;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.3);
 }
 
 .mobile-nav-header {
@@ -434,13 +449,14 @@
 }
 
 /* ===== DEBUG STYLES (temporär, zum Testen) ===== */
-/*
-#menuToggle {
-    border: 3px solid red !important;
-    background-color: rgba(255,0,0,0.2) !important;
+/* Sicherstellen, dass der Button immer klickbar ist */
+.mobile-nav-toggle {
+    position: relative;
+    z-index: 1002;  /* Höher als der Container */
+    pointer-events: auto !important;
+    cursor: pointer !important;
 }
 
-.mobile-nav-menu.active {
-    border: 3px solid green !important;
+.mobile-nav-toggle * {
+    pointer-events: none;  /* Verhindert, dass die inneren Elemente Klicks abfangen */
 }
-*/
