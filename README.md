@@ -1,5 +1,5 @@
 # Justified Portfolio
-This is a template for a portfolio page.
+This is a template for the gallery side of a portfolio page for images.
 
 It works on mobile and desktop, with a responsive gallery and navigation bar.
 
