@@ -8,7 +8,7 @@ A responsive gallery template designed for image-heavy portfolios. This system p
 
 
 
-## Desktop Views
+### Desktop Views
 
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
   <tr>
@@ -21,7 +21,7 @@ A responsive gallery template designed for image-heavy portfolios. This system p
   </tr>
 </table>
 
-## Mobile Views
+### Mobile Views
 
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
   <tr>
@@ -37,7 +37,7 @@ A responsive gallery template designed for image-heavy portfolios. This system p
   </tr>
 </table>
 
-## Example Customized
+### Example Customized
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
   <tr>
     <td width="75%" align="center" style="border: none;">
