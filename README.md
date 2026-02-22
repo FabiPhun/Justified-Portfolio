@@ -1,68 +1,103 @@
-# Meine Webseite mit Galerie und Navigation
+# Personal Website with Gallery & Navigation
 
-Eine anpassbare Webseite mit Bildergalerie und Navigationsleiste.
+A customizable website with an automatic image gallery and a clean navigation bar.
 
-## Design anpassen (styles.css)
+## Getting Started
 
-In `styles.css` kannst du Hintergrundfarbe und Seitenränder ändern:
+Just edit the CSS variables to match your style and add your images.
+
+## Customize Design (styles.css)
+
+Change colors and spacing in the `styles.css` file:
 
 :root {
+    /* Background color */
     --body-background-color: black;
+    
+    /* Spacing around content */
     --desktop-body-content-container-padding: 3% 15vw 5%;
     --mobile-body-content-container-padding: 10vw 8% 0 8%;
 }
 
-## Bildergalerie einbauen
+## Add Image Gallery
 
-Diesen Code in `index.html` einfügen:
+Insert this code in your `index.html` (inside the <body> tag):
 
 <div
   class="gallery_wrapper"
   image-spacing="5px"
   maxImages="4"
-  folder-path="./img/meine-bilder"
-  images="bild1.jpg, bild2.jpg"
+  folder-path="./img/my-images"
+  images="photo1.jpg, photo2.jpg"
   row-stretch="1">
 </div>
 
-### Wichtige Einstellungen
-- `image-spacing`: Abstand zwischen Bildern (z.B. "5px")
-- `maxImages`: Maximale Bilder pro Reihe (z.B. "4")
-- `folder-path`: Pfad zum Bildordner
-- `images`: Bestimmte Bilder anzeigen (leer lassen = zufällige Bilder)
+### Settings Explained
 
-## Navigation anpassen (navbar/navbar.html)
+| Setting | What it does | Example |
+|---------|--------------|---------|
+| image-spacing | Gap between images | "5px", "2vw" |
+| maxImages | Max images per row | "3", "4", "5" |
+| folder-path | Where your images are | "./img/vacation" |
+| images | Specific images to show | "sunset.jpg, beach.jpg" |
 
-So ist die Navigation aufgebaut:
+**Note:** Leave `images` empty to show random images from the folder.
+
+## Customize Navigation (navbar/navbar.html)
+
+The navigation structure looks like this:
 
 <template id="navContentTemplate">
     <div class="nav-content">
-        <!-- Hauptmenü -->
+        <!-- Main menu items -->
         <ul class="nav-section main-section">
-            <li><a href="/" class="nav-link-main">Startseite</a></li>
+            <li><a href="/" class="nav-link-main">Home</a></li>
+            <li><a href="/about" class="nav-link-main">About</a></li>
         </ul>
 
-        <!-- Kategorie mit Unterpunkten -->
+        <!-- Category with sub-items -->
         <ul class="nav-section">
-            <li><span class="nav-category">Kategorie</span></li>
-            <li><a href="/link" class="nav-link-sub">Unterpunkt</a></li>
+            <li><span class="nav-category">Projects</span></li>
+            <li><a href="/web" class="nav-link-sub">Web Design</a></li>
+            <li><a href="/photo" class="nav-link-sub">Photography</a></li>
+        </ul>
+
+        <!-- Another category -->
+        <ul class="nav-section">
+            <li><span class="nav-category">Contact</span></li>
+            <li><a href="/email" class="nav-link-sub">Email</a></li>
         </ul>
     </div>
 </template>
 
-### Links setzen
-In `href=""` kommt dein Link:
-<li><a href="https://google.de" class="nav-link-sub">Google</a></li>
+### Add Your Links
 
-## Farben der Navigation
+Put your URLs in the `href=""` attributes:
 
-In `styles.css` findest du diese Einstellungen:
+<li><a href="https://google.com" class="nav-link-sub">Google</a></li>
+<li><a href="/imprint" class="nav-link-sub">Imprint</a></li>
+
+## Navigation Colors (styles.css)
+
+These are the main color settings for the navbar:
 
 :root {
-    --nav-bg: #202020;              /* Navbar-Hintergrund */
-    --category-color: #d3d3d3;       /* Kategorien-Farbe */
-    --main-link-color: white;         /* Hauptmenü-Farbe */
-    --main-link-hover: #bdbdbd;       /* Hauptmenü-Hover */
-    --sub-link-color: #929292;        /* Untermenü-Farbe */
-    --sub-link-hover: white;          /* Untermenü-Hover */
+    /* Navbar background */
+    --nav-bg: #202020;
+    --mobile-header-bg: #707070;
+    
+    /* Category text */
+    --category-color: #d3d3d3;
+    
+    /* Main menu links */
+    --main-link-color: white;
+    --main-link-hover: #bdbdbd;
+    
+    /* Sub menu links */
+    --sub-link-color: #929292;
+    --sub-link-hover: white;
 }
+
+## Questions?
+
+Just ask if something is unclear or doesn't work.
