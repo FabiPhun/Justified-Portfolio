@@ -10,27 +10,27 @@ Just edit the CSS variables to match your style and add your images.
 
 Change colors and spacing in the `styles.css` file:
 
-:root {
-    /* Background color */
-    --body-background-color: black;
-    
-    /* Spacing around content */
-    --desktop-body-content-container-padding: 3% 15vw 5%;
-    --mobile-body-content-container-padding: 10vw 8% 0 8%;
-}
+    :root {
+        /* Background color */
+        --body-background-color: black;
+        
+        /* Spacing around content */
+        --desktop-body-content-container-padding: 3% 15vw 5%;
+        --mobile-body-content-container-padding: 10vw 8% 0 8%;
+    }
 
 ## Add Image Gallery
 
 Insert this code in your `index.html` (inside the <body> tag):
 
-<div
-  class="gallery_wrapper"
-  image-spacing="5px"
-  maxImages="4"
-  folder-path="./img/my-images"
-  images="photo1.jpg, photo2.jpg"
-  row-stretch="1">
-</div>
+    <div
+      class="gallery_wrapper"
+      image-spacing="5px"
+      maxImages="4"
+      folder-path="./img/my-images"
+      images="photo1.jpg, photo2.jpg"
+      row-stretch="1">
+    </div>
 
 ### Settings Explained
 
@@ -47,7 +47,7 @@ Insert this code in your `index.html` (inside the <body> tag):
 
 The navigation structure looks like this:
 
-<template id="navContentTemplate">
+    <template id="navContentTemplate">
     <div class="nav-content">
         <!-- Main menu items -->
         <ul class="nav-section main-section">
@@ -74,17 +74,17 @@ The navigation structure looks like this:
 
 Put your URLs in the `href=""` attributes:
 
-<li><a href="https://google.com" class="nav-link-sub">Google</a></li>
-<li><a href="/imprint" class="nav-link-sub">Imprint</a></li>
+    <li><a href="https://google.com" class="nav-link-sub">Google</a></li>
+    <li><a href="/imprint" class="nav-link-sub">Imprint</a></li>
 
 ## Navigation Colors (styles.css)
 
 These are the main color settings for the navbar:
 
-:root {
-    /* Navbar background */
-    --nav-bg: #202020;
-    --mobile-header-bg: #707070;
+    :root {
+     /* Navbar background */
+     --nav-bg: #202020;
+     --mobile-header-bg: #707070;
     
     /* Category text */
     --category-color: #d3d3d3;
@@ -96,7 +96,7 @@ These are the main color settings for the navbar:
     /* Sub menu links */
     --sub-link-color: #929292;
     --sub-link-hover: white;
-}
+    }
 
 ## Questions?
 
