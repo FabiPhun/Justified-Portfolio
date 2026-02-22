@@ -1,0 +1,45 @@
+/* !!--------------------------------------Styling Settings---------------------------------------!! */
+:root {
+    /*colour*/
+    --body-background-color: black;
+
+    /*padding desktop*/
+    --desktop-body-content-container-padding: 3% 15vw 5%;
+    /*padding mobile*/
+    --mobile-body-content-container-padding: 10vw 8% 0 8%;
+}
+/* !!---------------------------------------------------------------------------------------------!! */
+
+
+
+
+
+/* !!--------------------------------------Advanced Settings---------------------------------------!! */
+
+body {
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: var(--body-background-color);
+}
+
+.body_content {
+    flex: 1;
+    min-width: 0;
+    padding: var(--desktop-body-content-container-padding);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;     
+    align-items: center;     
+}
+
+@media screen and (max-width: 991px) {  
+    .body_content {
+        padding: var(--mobile-body-content-container-padding); 
+    }
+}
+/* !!---------------------------------------------------------------------------------------------!! */
