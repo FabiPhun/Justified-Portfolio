@@ -232,8 +232,7 @@
     left: 0;
     right: 0;
     z-index: 1001;
-    /* WICHTIG: Lässt Klicks zu den darunterliegenden Elementen durch */
-    pointer-events: none;
+    /* Remove pointer-events: none */
 }
 
 .mobile-nav-header {
@@ -241,23 +240,20 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    /* WICHTIG: Header und Button fangen Klicks wieder ein */
-    pointer-events: auto;
+    /* Remove pointer-events: auto from here - not needed anymore */
 }
 
 .mobile-nav-toggle {
-    padding: 10px;  /* Größere Touch-Zone */
+    padding: 10px;
     background: none;
     border: none;
     cursor: pointer;
-    pointer-events: auto;
-    /* Touch-friendly Größe */
+    /* Remove pointer-events: auto from here - not needed anymore */
     min-width: 44px;
     min-height: 44px;
     display: flex;
     align-items: center;
     justify-content: center;
-    /* Für bessere Sichtbarkeit bei Klick */
     -webkit-tap-highlight-color: rgba(255,255,255,0.2);
 }
 
