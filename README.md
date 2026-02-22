@@ -1,29 +1,57 @@
 # Justified Portfolio
 A responsive gallery template designed for image-heavy portfolios. This system provides a justified layout that automatically balances image rows for a clean, professional aesthetic on both mobile and desktop browsers.
 
----
-
 ## Features
 * Justified Grid: Dynamically scales images to fill row widths while maintaining aspect ratios.
 * Unified Navigation: A single HTML structure that powers both the desktop menu and mobile drawer.
 * Attribute-Based Config: Control the gallery behavior directly through HTML attributes.
 
+
+
+## Desktop Views
+
+<div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
+  <img src="https://github.com/FabiPhun/Justified-Portfolio-Gallery/blob/main/examples/example_fullpage_default_desktop.png?raw=true" alt="Desktop Default" style="height: 250px; width: auto; object-fit: contain;">
+  <img src="https://github.com/FabiPhun/Justified-Portfolio-Gallery/blob/main/examples/example_fullpage_default_desktop_lightbox.png?raw=true" alt="Desktop Lightbox" style="height: 250px; width: auto; object-fit: contain;">
+</div>
+
+## Mobile Views
+
+<div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
+    <img src="https://github.com/FabiPhun/Justified-Portfolio-Gallery/blob/main/examples/example_fullpage_default_mobile.png?raw=true" alt="Mobile Default" style="height: 400px; width: auto; object-fit: contain;">
+    <img src="https://github.com/FabiPhun/Justified-Portfolio-Gallery/blob/main/examples/example_fullpage_default_mobile_navbar-visible.png?raw=true" alt="Mobile with Navbar" style="height: 400px; width: auto; object-fit: contain;">
+    <img src="https://github.com/FabiPhun/Justified-Portfolio-Gallery/blob/main/examples/example_fullpage_default_mobile_lightbox.png?raw=true" alt="Mobile Lightbox" style="height: 400px; width: auto; object-fit: contain;">
+</div>
+
+## Example Customized
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td width="70%" align="center" style="border: none;">
+      <img src="https://github.com/FabiPhun/Justified-Portfolio-Gallery/blob/main/examples/example_fullpage_default_desktop_custom.png?raw=true" style="width: 100%; display: block;">
+    </td>
+    <td width="30%" align="center" style="border: none;">
+      <img src="https://github.com/FabiPhun/Justified-Portfolio-Gallery/blob/main/examples/example_fullpage_default_mobile_custom.png?raw=true" style="width: 100%; display: block;">
+    </td>
+  </tr>
+</table>
 ---
 
 ## Gallery Component
 The gallery is initialized by adding a wrapper to your `index.html.`
 
 ### Implementation
-    <div
-        id="0"
-        class="gallery_wrapper"
-        image-spacing=""
-        maxImages=""
-        folder-path=""
-        images=""
-        fc-gallery="list"
-        row-stretch="1">
-     </div>
+```html
+<div
+   id="0"
+   class="gallery_wrapper"
+   image-spacing=""
+   maxImages=""
+   folder-path=""
+   images=""
+   fc-gallery="list"
+   row-stretch="1">
+</div>
+```
 
 ### Configuration Table
 | Setting | What it does | Example |
@@ -50,17 +78,18 @@ Changes made to the structure will automatically reflect across all screen sizes
 
 ### Structure
 Edit `navbar/navbar.html to manage` your site links:
-
-    <div class="nav-content">
+```html
+<div class="nav-content">
     <ul class="nav-section main-section">
-        <li><a href="/" class="nav-link-main">Home</a></li>
+        <li><a href="/" class="nav-link-main">HOME</a></li>
     </ul>
 
     <ul class="nav-section">
-        <li><span class="nav-category">Portfolio</span></li>
-        <li><a href="/gallery" class="nav-link-sub">Gallery</a></li>
+        <li><span class="nav-category">cats</span></li>
+        <li><a href="/gallery" class="nav-link-sub">white cats</a></li>
     </ul>
-    </div>
+</div>
+```
 
 ---
 
