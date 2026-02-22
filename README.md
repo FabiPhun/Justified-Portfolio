@@ -48,6 +48,7 @@ A responsive gallery template designed for image-heavy portfolios. This system p
     </td>
   </tr>
 </table>
+
 ---
 
 ## Gallery Component
@@ -113,4 +114,3 @@ The visual presentation is separated into two primary CSS files for easier manag
 * Gallery Styling: Modify `styles.css` to adjust the body and its' content.
 * Navbar Styling: Modify `navbar.css` to update typography, color schemes, and padding for the navigation menu.
 
----
