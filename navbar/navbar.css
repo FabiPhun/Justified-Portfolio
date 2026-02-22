@@ -449,14 +449,13 @@
 }
 
 /* ===== DEBUG STYLES (temporär, zum Testen) ===== */
-/* Sicherstellen, dass der Button immer klickbar ist */
-.mobile-nav-toggle {
-    position: relative;
-    z-index: 1002;  /* Höher als der Container */
-    pointer-events: auto !important;
-    cursor: pointer !important;
+/*
+#menuToggle {
+    border: 3px solid red !important;
+    background-color: rgba(255,0,0,0.2) !important;
 }
 
-.mobile-nav-toggle * {
-    pointer-events: none;  /* Verhindert, dass die inneren Elemente Klicks abfangen */
+.mobile-nav-menu.active {
+    border: 3px solid green !important;
 }
+*/
