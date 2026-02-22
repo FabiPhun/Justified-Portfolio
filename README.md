@@ -1,6 +1,14 @@
-# Personal Website with Gallery & Navigation
+# Justified Portfolio
+This is a template for a portfolio page.
 
-## Gallery Component
+It works on mobile and desktop, with a responsive gallery and navigation bar.
+
+
+
+# Gallery Component
+A justified gallery with additional settings.
+
+
 Add this to your `index.html`:
 
     <div
@@ -16,12 +24,14 @@ Add this to your `index.html`:
 | image-spacing | Gap between images (px, vw, %) |
 | maxImages | Max images per row |
 | folder-path | Folder where images are stored |
-| images | Specific images to show (leave empty = random) |
+| images | Specific images to show, the order matters! (leave empty = random images for preview) |
 
-## Navigation Component
+# Navigation Component
+Changing `ANYTHING`, will affect both mobile and desktop versions!
+
+
 Edit `navbar/navbar.html`:
 
-    <template id="navContentTemplate">
     <div class="nav-content">
         <!-- Main menu -->
         <ul class="nav-section main-section">
@@ -34,13 +44,11 @@ Edit `navbar/navbar.html`:
             <li><a href="/page" class="nav-link-sub">Subpage</a></li>
         </ul>
     </div>
-</template>
-
 
 ## Styling
 Change colors in `styles.css`:
 
-:root {
+    :root {
     /* Page background */
     --body-background-color: black;
     
@@ -51,4 +59,3 @@ Change colors in `styles.css`:
     --main-link-hover: #bdbdbd;
     --sub-link-color: #929292;
     --sub-link-hover: white;
-}
