@@ -232,6 +232,7 @@
     left: 0;
     right: 0;
     z-index: 1001;
+    pointer-events: none;
 }
 
 .mobile-nav-header {
@@ -239,13 +240,28 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    pointer-events: auto;
 }
 
 .mobile-nav-toggle {
-    padding: 0;
+    padding: 10px;
     background: none;
     border: none;
     cursor: pointer;
+    pointer-events: auto;
+    min-width: 44px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-tap-highlight-color: rgba(255,255,255,0.2);
+}
+
+/* Hover nur für nicht-Touch Geräte */
+@media (hover: hover) {
+    .mobile-nav-toggle:hover {
+        opacity: 0.8;
+    }
 }
 
 .hamburger-icon {
@@ -259,6 +275,20 @@
     height: 3px;
     background-color: white;
     border-radius: 3px;
+    transition: transform var(--transition-speed), opacity var(--transition-speed);
+}
+
+/* Optional: Animation für geöffnetes Menü */
+.mobile-nav-menu.active ~ .mobile-nav-header .hamburger-line:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.mobile-nav-menu.active ~ .mobile-nav-header .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-nav-menu.active ~ .mobile-nav-header .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
 }
 
 .mobile-nav-menu {
@@ -272,6 +302,10 @@
     transition: transform var(--transition-menu);
     overflow-y: auto;
     z-index: 1000;
+    /* WICHTIG: Menü muss klickbar sein */
+    pointer-events: auto;
+    /* Schatten für bessere Abgrenzung */
+    box-shadow: 2px 0 10px rgba(0,0,0,0.3);
 }
 
 .mobile-nav-menu.active {
@@ -327,6 +361,8 @@
     display: block;
     font-family: var(--font-primary);
     text-decoration: none;
+    /* Touch-friendly Links */
+    padding: 8px 0;
 }
 
 .mobile-nav-menu .nav-link-main:hover {
@@ -347,6 +383,8 @@
     transition: color var(--transition-speed);
     font-family: var(--font-primary);
     text-decoration: none;
+    /* Touch-friendly Links */
+    padding: 6px 0 6px 1vh;
 }
 
 .mobile-nav-menu .nav-link-sub:hover {
@@ -393,14 +431,28 @@
 }
 
 /* ===== HOVER EFFECTS ===== */
-.main-nav .nav-link-main:hover,
-.mobile-nav-menu .nav-link-main:hover {
-    letter-spacing: var(--typography-letter-spacing-wide);
-    transition: letter-spacing var(--transition-speed);
+@media (hover: hover) {
+    .main-nav .nav-link-main:hover,
+    .mobile-nav-menu .nav-link-main:hover {
+        letter-spacing: var(--typography-letter-spacing-wide);
+        transition: letter-spacing var(--transition-speed);
+    }
+
+    .main-nav .nav-link-sub:hover,
+    .mobile-nav-menu .nav-link-sub:hover {
+        letter-spacing: 0.2px;
+        transition: letter-spacing var(--transition-speed);
+    }
 }
 
-.main-nav .nav-link-sub:hover,
-.mobile-nav-menu .nav-link-sub:hover {
-    letter-spacing: 0.2px;
-    transition: letter-spacing var(--transition-speed);
+/* ===== DEBUG STYLES (temporär, zum Testen) ===== */
+/*
+#menuToggle {
+    border: 3px solid red !important;
+    background-color: rgba(255,0,0,0.2) !important;
 }
+
+.mobile-nav-menu.active {
+    border: 3px solid green !important;
+}
+*/
