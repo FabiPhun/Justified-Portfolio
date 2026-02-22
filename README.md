@@ -10,26 +10,40 @@ A responsive gallery template designed for image-heavy portfolios. This system p
 
 ## Desktop Views
 
-<div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
-  <img src="https://github.com/FabiPhun/Justified-Portfolio-Gallery/blob/main/examples/example_fullpage_default_desktop.png?raw=true" alt="Desktop Default" style="height: 250px; width: auto; object-fit: contain;">
-  <img src="https://github.com/FabiPhun/Justified-Portfolio-Gallery/blob/main/examples/example_fullpage_default_desktop_lightbox.png?raw=true" alt="Desktop Lightbox" style="height: 250px; width: auto; object-fit: contain;">
-</div>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td align="center" style="border: none;">
+      <img src="https://github.com/FabiPhun/Justified-Portfolio-Gallery/blob/main/examples/example_fullpage_default_desktop.png?raw=true" style="width: 100%; display: block;">
+    </td>
+    <td align="center" style="border: none;">
+      <img src="https://github.com/FabiPhun/Justified-Portfolio-Gallery/blob/main/examples/example_fullpage_default_desktop_lightbox.png?raw=true" style="width: 100%; display: block;">
+    </td>
+  </tr>
+</table>
 
 ## Mobile Views
 
-<div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
-    <img src="https://github.com/FabiPhun/Justified-Portfolio-Gallery/blob/main/examples/example_fullpage_default_mobile.png?raw=true" alt="Mobile Default" style="height: 400px; width: auto; object-fit: contain;">
-    <img src="https://github.com/FabiPhun/Justified-Portfolio-Gallery/blob/main/examples/example_fullpage_default_mobile_navbar-visible.png?raw=true" alt="Mobile with Navbar" style="height: 400px; width: auto; object-fit: contain;">
-    <img src="https://github.com/FabiPhun/Justified-Portfolio-Gallery/blob/main/examples/example_fullpage_default_mobile_lightbox.png?raw=true" alt="Mobile Lightbox" style="height: 400px; width: auto; object-fit: contain;">
-</div>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td align="center" style="border: none;">
+      <img src="https://github.com/FabiPhun/Justified-Portfolio-Gallery/blob/main/examples/example_fullpage_default_mobile.png?raw=true" style="width: 100%; display: block;">
+    </td>
+    <td align="center" style="border: none;">
+      <img src="https://github.com/FabiPhun/Justified-Portfolio-Gallery/blob/main/examples/example_fullpage_default_mobile_navbar-visible.png?raw=true" style="width: 100%; display: block;">
+    </td>
+    <td align="center" style="border: none;">
+      <img src="https://github.com/FabiPhun/Justified-Portfolio-Gallery/blob/main/examples/example_fullpage_default_mobile_lightbox.png?raw=true" style="width: 100%; display: block;">
+    </td>
+  </tr>
+</table>
 
 ## Example Customized
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
   <tr>
-    <td width="70%" align="center" style="border: none;">
+    <td width="75%" align="center" style="border: none;">
       <img src="https://github.com/FabiPhun/Justified-Portfolio-Gallery/blob/main/examples/example_fullpage_default_desktop_custom.png?raw=true" style="width: 100%; display: block;">
     </td>
-    <td width="30%" align="center" style="border: none;">
+    <td width="25%" align="center" style="border: none;">
       <img src="https://github.com/FabiPhun/Justified-Portfolio-Gallery/blob/main/examples/example_fullpage_default_mobile_custom.png?raw=true" style="width: 100%; display: block;">
     </td>
   </tr>
