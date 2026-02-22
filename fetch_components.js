@@ -27,5 +27,5 @@ fetch('navbar/navbar.html')
     .catch(error => {
         console.error('Fehler beim Laden der Navigation:', error);
         document.getElementById('navbar-container').innerHTML =
-            '<div style="color:white; padding:20px;">Navigation konnte nicht geladen werden</div>';
+            '<div style="color:white; padding:20px;">couldnt load navbar</div>';
     });

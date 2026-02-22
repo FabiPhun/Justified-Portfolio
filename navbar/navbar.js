@@ -6,7 +6,6 @@ function initNavigation() {
         template: document.getElementById('navContentTemplate')
     };
 
-    console.log('Navigation init:', elements);
 
     if (elements.template) {
         const content = elements.template.content.cloneNode(true);
@@ -27,7 +26,7 @@ function initNavigation() {
 
 function setupMobileMenu(toggleButton, menuElement) {
     if (!toggleButton || !menuElement) {
-        console.warn('Mobile Menu Elemente nicht gefunden');
+        console.warn('mobile nav error');
         return;
     }
 
@@ -39,7 +38,6 @@ function setupMobileMenu(toggleButton, menuElement) {
     newToggle.addEventListener('click', (e) => {
         e.preventDefault();
         e.stopPropagation();
-        console.log('Menu toggle clicked');
         menuElement.classList.toggle('active');
     });
 

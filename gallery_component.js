@@ -33,7 +33,7 @@ const GALLERY_SETTINGS = {
   }
 };
 
-// Helper Functions
+
 const applyCSSToElement = (element, cssObject) => {
   if (!element) return;
   Object.assign(element.style, cssObject);
@@ -42,7 +42,7 @@ const applyCSSToElement = (element, cssObject) => {
 const areImagesLoaded = (images) => 
   Array.from(images).every(img => img.complete && img.naturalHeight > 0);
 
-// Lightbox
+
 const injectLightboxHTML = () => {
   const lightboxHTML = `
     <div id="custom-lightbox" style="display:none; position:fixed; z-index:9999; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.95); align-items:center; justify-content:center; flex-direction:column;">
@@ -57,7 +57,7 @@ const injectLightboxHTML = () => {
   document.body.insertAdjacentHTML('beforeend', lightboxHTML);
 };
 
-// Gallery Generation
+
 const generateGalleryFromList = () => {
   const galleryLists = document.querySelectorAll(GALLERY_SETTINGS.gallery);
   if (galleryLists.length === 0) return false;
@@ -101,7 +101,7 @@ const generateGalleryFromList = () => {
   return true;
 };
 
-// Gallery Layout
+
 const setGalleryLayout = (container, galleryImages) => {
   if (galleryImages.length === 0 || !areImagesLoaded(galleryImages)) return;
   
@@ -171,7 +171,7 @@ const setGalleryLayout = (container, galleryImages) => {
   setTimeout(() => { container.style.height = 'auto'; }, 10);
 };
 
-// Initialize Layout
+
 const initLayout = () => {
   const galleryLists = document.querySelectorAll(GALLERY_SETTINGS.gallery);
 
@@ -237,7 +237,7 @@ const initLayout = () => {
   });
 };
 
-// Initialize Lightbox
+
 const initLightbox = () => {
   const lightbox = document.querySelector(GALLERY_SETTINGS.lightbox);
   const lbImg = document.querySelector(GALLERY_SETTINGS.lightboxImg);
@@ -335,7 +335,7 @@ const initLightbox = () => {
   });
 };
 
-// Initialize everything
+
 document.addEventListener('DOMContentLoaded', () => {
   injectLightboxHTML();
   generateGalleryFromList();
