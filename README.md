@@ -1,5 +1,7 @@
 # Justified Portfolio
-A responsive gallery template designed for image-heavy portfolios. This system provides a justified layout that automatically balances image rows for a clean, professional aesthetic on both mobile and desktop browsers.
+A template designed for image-heavy portfolios.
+
+This system provides a justified layout that automatically balances differently sized images within a container to create a clean aesthetic on both mobile and desktop browsers as well as a navigation that is easy to customize.
 
 ## Features
 * Justified Grid: Dynamically scales images to fill row widths while maintaining aspect ratios.
