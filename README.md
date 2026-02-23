@@ -100,7 +100,7 @@ You can have as many gallery components as you like and they will all function s
 Add this to your `html` code.
 ```html
 <head>
-    <link rel="stylesheet" href="navbar/navbar.css">
+    <link rel="stylesheet" href="components/navbar/navbar.css">
 </head>
 
 <body>
