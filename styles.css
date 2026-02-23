@@ -7,7 +7,7 @@
     /*padding desktop*/
     --desktop-body-content-container-padding: 3% 15vw 5%;
     /*padding mobile*/
-    --mobile-body-content-container-padding: 15vw 8% 0 8%;
+    --mobile-body-content-container-padding: 5vw 8vw 5vw;
 }
 
 /* !!--------------------------------------Advanced Settings---------------------------------------!! */
