@@ -42,12 +42,10 @@ function adjustBodyContentPadding() {
         
         if (mobileNav && bodyContent) {
             const navHeight = mobileNav.offsetHeight;
-            
             const rootStyles = getComputedStyle(document.documentElement);
             const basePadding = rootStyles.getPropertyValue('--mobile-body-content-container-padding').trim();
-
+            
             if (basePadding) {
-
                 const paddingParts = basePadding.split(' ');
                 
                 let newPadding;
@@ -109,10 +107,12 @@ function setupMobileMenu(toggleButton, menuElement) {
         }
     });
 
-    overlay.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        closeMenu();
+    document.addEventListener('click', (e) => {
+        if (menuElement.classList.contains('active') && 
+            !menuElement.contains(e.target) && 
+            !newToggle.contains(e.target)) {
+            closeMenu();
+        }
     });
 
     document.addEventListener('keydown', (e) => {
@@ -125,10 +125,6 @@ function setupMobileMenu(toggleButton, menuElement) {
         link.addEventListener('click', () => {
             closeMenu();
         });
-    });
-
-    menuElement.addEventListener('click', (e) => {
-        e.stopPropagation();
     });
 }
 

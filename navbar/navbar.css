@@ -214,6 +214,18 @@
     color: var(--sub-link-color);
 }
 
+/* Copyright */
+.main-nav .nav-copyright {
+    color: var(--sub-link-hover);
+    text-align: center;
+    font-family: var(--font-copyright);
+    font-size: var(--desktop-font-copyright);
+    line-height: var(--typography-line-height-tight);
+    margin: var(--desktop-copyright-margin);
+    padding: var(--desktop-copyright-padding);
+    position: relative;
+}
+
 /* ===== MOBILE STYLES ===== */
 .mobile-nav-container {
     display: none;
@@ -223,7 +235,7 @@
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1001;
+    z-index: 1002;
     pointer-events: none;
 }
 
@@ -270,18 +282,6 @@
     transition: transform var(--transition-speed), opacity var(--transition-speed);
 }
 
-.mobile-nav-menu.active ~ .mobile-nav-header .hamburger-line:nth-child(1) {
-    transform: rotate(45deg) translate(8px, 8px);
-}
-
-.mobile-nav-menu.active ~ .mobile-nav-header .hamburger-line:nth-child(2) {
-    opacity: 0;
-}
-
-.mobile-nav-menu.active ~ .mobile-nav-header .hamburger-line:nth-child(3) {
-    transform: rotate(-45deg) translate(7px, -7px);
-}
-
 .mobile-nav-menu {
     position: fixed;
     top: 0;
@@ -292,7 +292,7 @@
     transform: translateX(-100%);
     transition: transform var(--transition-menu);
     overflow-y: auto;
-    z-index: 1000;
+    z-index: 1003;
     pointer-events: auto;
     box-shadow: 2px 0 10px rgba(0,0,0,0.3);
 }
@@ -357,6 +357,7 @@
     color: var(--main-link-hover);
 }
 
+/* Unter-Links */
 .mobile-nav-menu .nav-link-sub {
     color: var(--sub-link-color);
     padding: var(--mobile-link-sub-padding);
@@ -381,7 +382,6 @@
     color: var(--sub-link-color);
 }
 
-
 /* ===== OVERLAY STYLES ===== */
 .mobile-nav-overlay {
     display: none;
@@ -391,8 +391,7 @@
     right: 0;
     bottom: 0;
     background-color: var(--overlay-color);
-    backdrop-filter: blur(var(--overlay-blur));
-    z-index: 999;
+    z-index: 1002;
     opacity: 0;
     transition: opacity var(--transition-menu);
     pointer-events: none;
@@ -444,15 +443,3 @@ body.menu-open {
         transition: letter-spacing var(--transition-speed);
     }
 }
-
-/* ===== DEBUG STYLES (temporär, zum Testen) ===== */
-/*
-#menuToggle {
-    border: 3px solid red !important;
-    background-color: rgba(255,0,0,0.2) !important;
-}
-
-.mobile-nav-menu.active {
-    border: 3px solid green !important;
-}
-*/
