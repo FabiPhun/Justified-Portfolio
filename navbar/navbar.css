@@ -384,17 +384,23 @@
 
 /* ===== OVERLAY STYLES ===== */
 .mobile-nav-overlay {
-    display: none;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: var(--overlay-color);
+    background-color: var(--overlay-color, rgba(0, 0, 0, 1));
     z-index: 1002;
+    
+    /* Fade Animation */
     opacity: 0;
-    transition: opacity var(--transition-menu);
-    pointer-events: none;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.mobile-nav-overlay.active {
+    opacity: 1;
+    visibility: visible;
 }
 
 .mobile-nav-overlay.active {
