@@ -1,17 +1,17 @@
 /* !!--------------------------------------Styling Settings---------------------------------------!! */
 
 /* ===== custom fonts ===== */
-@import url('/');
-
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
 :root {
 /* ===== COLOURS NAVBAR ===== */
-    --nav-bg: #202020;
-    --mobile-header-bg: #707070;
+    --nav-bg: #ff00aa;
+    --mobile-header-bg: #ff00aa;
 
 
 /* ===== TYPOGRAPHY ===== */
-    --font-primary: "Arial", sans-serif;
+    --font-primary: "DynaPuff", system-ui;
     --desktop-font-base: 16px;
     --mobile-font-base: 2svh;
 
@@ -22,20 +22,20 @@
 
 
     /*category text*/
-    --category-color: #d3d3d3;
+    --category-color: #e7c2ff;
 
     --typography-category-style: normal;
     --typography-category-weight: normal;
 
-    --desktop-font-category: 18px;
-    --mobile-font-category: 2.2svh;
+    --desktop-font-category: 16px;
+    --mobile-font-category: 2svh;
 
 
     /*main-link text*/
     --main-link-color: white;
-    --main-link-hover: #bdbdbd;
+    --main-link-hover: #ffc6ee;
 
-    --font-menu: "Arial", sans-serif;
+    --font-menu: "Pacifico", cursive;
     --typography-mainlink-weight: normal;
     --typography-mainlink-style: normal;   
 
@@ -44,8 +44,8 @@
 
 
     /*sub-link text*/
-    --sub-link-color: #929292;
-    --sub-link-hover: white;
+    --sub-link-color: #fff4fc;
+    --sub-link-hover: #ffc6ee;
 
     --typography-sublink-weight: normal;
     --typography-sublink-style: normal;
@@ -73,7 +73,7 @@
 /* ===== MOBILE ===== */
     --mobile-nav-width: 32vh;
     --mobile-nav-padding: 5vh 5vh 0;
-    --mobile-content-gap: 1vh;
+    --mobile-content-gap: 10px;
     --mobile-section-gap: 0;
     --mobile-section-margin: 0;
     --mobile-main-section-margin: 0;
@@ -350,7 +350,6 @@
     display: block;
     font-family: var(--font-primary);
     text-decoration: none;
-    padding: 0;
 }
 
 .mobile-nav-menu .nav-link-main:hover {
