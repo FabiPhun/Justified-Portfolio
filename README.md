@@ -54,20 +54,24 @@ This system provides a justified layout that automatically balances differently 
 ---
 
 ## Gallery Component
-The gallery is initialized by adding a wrapper to your `index.html.`
+The gallery is initialized by adding a wrapper and script tag to your `index.html.`
 
 ### Implementation
 ```html
-<div
-   id="0"
-   class="gallery_wrapper"
-   image-spacing=""
-   maxImages=""
-   folder-path=""
-   images=""
-   fc-gallery="list"
-   row-stretch="1">
-</div>
+<body>
+  <div
+     id="0"
+     class="gallery_wrapper"
+     image-spacing=""
+     maxImages=""
+     folder-path=""
+     images=""
+     fc-gallery="list"
+     row-stretch="1">
+  </div>
+
+  <script src="components/gallery_component.js"></script>
+</body>
 ```
 
 ### Configuration Table
@@ -91,22 +95,35 @@ You can have as many gallery components as you like and they will all function s
 ---
 
 ## Navigation Component
-Changes made to the structure will automatically reflect across all screen sizes, mobile and desktop.
+
+### Adding the compontent
+Add this to your `html` code.
+```html
+<head>
+    <link rel="stylesheet" href="navbar/navbar.css">
+</head>
+
+<body>
+    <div id="navbar-container"></div>
+    <script src="components/fetch_components.js"></script>
+</body>
+```
 
 ### Structure
 Edit `navbar/navbar.html` to manage your site links:
 ```html
 <div class="nav-content">
     <ul class="nav-section main-section">
-        <li><a href="/" class="nav-link-main">HOME</a></li>
+        <li><a href="home.html" class="nav-link-main">HOME</a></li>
     </ul>
 
     <ul class="nav-section">
-        <li><span class="nav-category">cats</span></li>
-        <li><a href="/gallery" class="nav-link-sub">white cats</a></li>
+        <li><span class="nav-category">ANIMALS</span></li>
+        <li><a href="cats.html" class="nav-link-sub">cats</a></li>
     </ul>
 </div>
 ```
+Changes made to the structure will automatically reflect across all screen sizes, mobile and desktop.
 
 ---
 
