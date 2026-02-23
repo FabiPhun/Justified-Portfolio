@@ -1,4 +1,4 @@
-fetch('navbar/navbar.html')
+fetch('components/navbar/navbar.html')
     .then(response => {
         if (!response.ok) {
             throw new Error('Network response was not ok');
@@ -13,7 +13,7 @@ fetch('navbar/navbar.html')
                 initNavbar();
             } else {
                 const script = document.createElement('script');
-                script.src = 'navbar/navbar.js?' + new Date().getTime();
+                script.src = 'components/navbar/navbar.js?' + new Date().getTime();
                 document.body.appendChild(script);
 
                 script.onload = function () {
@@ -25,7 +25,7 @@ fetch('navbar/navbar.html')
         }, 50);
     })
     .catch(error => {
-        console.error('Fehler beim Laden der Navigation:', error);
+        console.error('error loading navbar:', error);
         document.getElementById('navbar-container').innerHTML =
             '<div style="color:white; padding:20px;">couldnt load navbar</div>';
     });
