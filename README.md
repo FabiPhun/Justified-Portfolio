@@ -101,7 +101,12 @@ Add this to your `html` code.
 ```html
 
 <body>
-    <div id="navbar-container"></div>
+    <div
+    id="navbar-container"
+    desktopNav=""
+    mobileNav="">
+    </div>
+
     <script src="components/navbar/navbar.js"></script>
 </body>
 ```
