@@ -121,12 +121,12 @@ Edit `navbar/navbar.html` to manage your site links:
 ```html
 <div class="nav-content">
     <ul class="nav-section main-section">
-        <li><a href="home.html" class="nav-link-main">HOME</a></li>
+        <li><a href="" class="nav-link-main">HOME</a></li>
     </ul>
 
     <ul class="nav-section">
         <li><span class="nav-category">category</span></li>
-        <li><a href="cats.html" class="nav-link-sub">link</a></li>
+        <li><a href="" class="nav-link-sub">link</a></li>
     </ul>
 </div>
 ```
