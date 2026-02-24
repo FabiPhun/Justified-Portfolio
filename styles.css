@@ -1,12 +1,8 @@
 /* !!--------------------------------------Styling Settings---------------------------------------!! */
 
 :root {
-    /*colour*/
     --body-background-color: black;
-
-    /*padding desktop*/
     --desktop-body-content-container-padding: 3% 15vw 5%;
-    /*padding mobile*/
     --mobile-body-content-container-padding: 5vw 8vw 5vw;
 }
 
@@ -38,4 +34,5 @@ body {
         padding: var(--mobile-body-content-container-padding); 
     }
 }
+
 /* !!---------------------------------------------------------------------------------------------!! */

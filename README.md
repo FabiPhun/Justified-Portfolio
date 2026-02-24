@@ -54,20 +54,24 @@ This system provides a justified layout that automatically balances differently 
 ---
 
 ## Gallery Component
-The gallery is initialized by adding a wrapper to your `index.html.`
+The gallery is initialized by adding a wrapper and script tag to your `index.html.`
 
 ### Implementation
 ```html
-<div
-   id="0"
-   class="gallery_wrapper"
-   image-spacing=""
-   maxImages=""
-   folder-path=""
-   images=""
-   fc-gallery="list"
-   row-stretch="1">
-</div>
+<body>
+  <div
+     id="0"
+     class="gallery_wrapper"
+     image-spacing=""
+     maxImages=""
+     folder-path=""
+     images=""
+     fc-gallery="list"
+     row-stretch="1">
+  </div>
+
+  <script src="components/gallery_component.js"></script>
+</body>
 ```
 
 ### Configuration Table
@@ -91,28 +95,54 @@ You can have as many gallery components as you like and they will all function s
 ---
 
 ## Navigation Component
-Changes made to the structure will automatically reflect across all screen sizes, mobile and desktop.
+
+### Adding the compontent
+Add this to your `html` code.
+```html
+
+<body>
+    <div id="navbar-container"></div>
+    <script src="components/navbar/navbar.js"></script>
+</body>
+```
+
+### Configuration Table
+| Setting | What it does | Example |
+|---------|--------------|---------|
+| `desktopNav` | turns the desktop navbar off | `desktopNav="false"` |
+| `mobileNav` | turns the mobile navbar and navmenu off | `mobileNav="false"` |
+
+#### Note:
+
+If these two attributes are left empty, they will return a `true` statement.
 
 ### Structure
 Edit `navbar/navbar.html` to manage your site links:
 ```html
 <div class="nav-content">
     <ul class="nav-section main-section">
-        <li><a href="/" class="nav-link-main">HOME</a></li>
+        <li><a href="home.html" class="nav-link-main">HOME</a></li>
     </ul>
 
     <ul class="nav-section">
-        <li><span class="nav-category">cats</span></li>
-        <li><a href="/gallery" class="nav-link-sub">white cats</a></li>
+        <li><span class="nav-category">category</span></li>
+        <li><a href="cats.html" class="nav-link-sub">link</a></li>
     </ul>
 </div>
 ```
+Changes made to the structure will automatically reflect across all screen sizes, mobile and desktop.
 
 ---
 
 ## Styling and Customization
 The visual presentation is separated into two primary CSS files for easier management:
 
-* Gallery Styling: Modify `styles.css` to adjust the body and its' content.
+* Body Styling: Modify `styles.css` to adjust the body and its' content.
 * Navbar Styling: Modify `navbar.css` to update typography, color schemes, and padding for the navigation menu.
+* Gallery Styling: Add and modify the attributes within the `gallery-wrapper` class.
 
+---
+
+
+### Thanks
+Thank you for using this template, feel free to do whatever you want with it.
