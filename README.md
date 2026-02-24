@@ -102,9 +102,9 @@ Add this to your `html` code.
 
 <body>
     <div
-    id="navbar-container"
-    desktopNav=""
-    mobileNav="">
+      id="navbar-container"
+      desktopNav=""
+      mobileNav="">
     </div>
 
     <script src="components/navbar/navbar.js"></script>
