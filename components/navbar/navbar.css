@@ -4,24 +4,50 @@
 @import url('/');
 
 :root {
+
     /* ===== TYPOGRAPHY BASE ===== */
     --font-primary: "Calibri", sans-serif;
     --fontsize-base-desktop: 16px;
     --fontsize-base-mobile: 2svh;
 
 
-    /* ===== COLORS ===== */
+    /* ===== ANIMATIONS ===== */
+    --transition-speed: 0.2s;
+    --transition-menu: 0.3s ease;
+
+
+    /* ===== NAVBAR LAYOUT ===== */
     --nav-bg: #202020;
     --mobile-header-bg: #707070;
     --color-overlay: rgba(0, 0, 0, 0.5);
+
+    --width-nav-desktop: 300px;
+    --padding-nav-desktop: 60px 30px;
+    --gap-nav-desktop: 0;
     
+    --width-nav-mobile: 32vh;
+    --padding-nav-mobile: 5vh 5vh 0;
+    --gap-nav-mobile: 0;
+
+
+    /* ===== SECTION STYLES ===== */
+    --padding-section-desktop: 0;
+    --margin-section-desktop: 0;
+    --gap-section-desktop: 0;
+    
+    --padding-section-mobile: 0;
+    --margin-section-mobile: 0;
+    --gap-section-mobile: 0;
+
+
 
     /* ===== MAIN LINK STYLES ===== */
     --font-mainlink: ;
+    --fontsize-mainlink-desktop: 25px;
+
     --color-mainlink: white;
     --color-mainlink-hover: #bdbdbd;
     
-    --fontsize-mainlink-desktop: 25px;
     --lineheight-mainlink-desktop: 1;
     --padding-mainlink-desktop: 0;
     --margin-mainlink-desktop: 0;
@@ -34,9 +60,10 @@
 
     /* ===== CATEGORY STYLES ===== */
     --font-category: ;
-    --color-category: #d3d3d3;
-    
     --fontsize-category-desktop: 18px;
+
+    --color-category: #d3d3d3;
+
     --lineheight-category-desktop: 1.2;
     --padding-category-desktop: 0;
     --margin-category-desktop: 0 0 0 0;
@@ -49,10 +76,11 @@
 
     /* ===== SUBLINK STYLES ===== */
     --font-sublink: ;
+    --fontsize-sublink-desktop: 18px;
+
     --color-sublink: #929292;
     --color-sublink-hover: white;
     
-    --fontsize-sublink-desktop: 18px;
     --lineheight-sublink-desktop: 1;
     --padding-sublink-desktop: 0 0 0 10px;
     --margin-sublink-desktop: 0 0 0 0;
@@ -61,31 +89,6 @@
     --lineheight-sublink-mobile: 1;
     --padding-sublink-mobile: 0 0 0 1svh;
     --margin-sublink-mobile: 0 0 0 0;
-
-
-    /* ===== NAV-SECTION STYLES (DIV WRAPPER) ===== */
-    --padding-section-desktop: 0;
-    --margin-section-desktop: 0;
-    --gap-section-desktop: 0;
-    
-    --padding-section-mobile: 0;
-    --margin-section-mobile: 0;
-    --gap-section-mobile: 0;
-
-
-    /* ===== NAVBAR LAYOUT ===== */
-    --width-nav-desktop: 300px;
-    --padding-nav-desktop: 60px 30px;
-    --gap-sections-desktop: 0;
-    
-    --width-nav-mobile: 32vh;
-    --padding-nav-mobile: 5vh 5vh 0;
-    --gap-sections-mobile: 0;
-
-
-    /* ===== ANIMATIONS ===== */
-    --transition-speed: 0.2s;
-    --transition-menu: 0.3s ease;
 }
 
 
@@ -112,7 +115,7 @@
 .main-nav .nav-content {
     display: flex;
     flex-direction: column;
-    gap: var(--gap-sections-desktop);
+    gap: var(--gap-nav-desktop);
     flex: 1;
     overflow-y: auto;
     padding-right: 5px;
@@ -247,9 +250,10 @@
     min-height: 100%;
     display: flex;
     flex-direction: column;
-    gap: var(--gap-sections-mobile);
+    gap: var(--gap-nav-mobile);
     font-family: var(--font-primary);
     font-size: var(--fontsize-base-mobile);
+    box-sizing: border-box;
 }
 
 .mobile-nav-menu .nav-section {
