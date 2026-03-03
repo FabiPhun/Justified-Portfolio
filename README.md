@@ -104,7 +104,8 @@ Add this to your `html` code.
     <div
       id="navbar-container"
       desktopNav=""
-      mobileNav="">
+      mobileNav=""
+      directoryFix="">
     </div>
 
     <script src="components/navbar/navbar.js"></script>
@@ -116,24 +117,33 @@ Add this to your `html` code.
 |---------|--------------|---------|
 | `desktopNav` | turns the desktop navbar off | `desktopNav="false"` |
 | `mobileNav` | turns the mobile navbar and navmenu off | `mobileNav="false"` |
+| `directoryFix`| if the script call is within another folder, you can specify the root | `directoryFix="../"` |
 
 #### Note:
 
-If these two attributes are left empty, they will return a `true` statement.
+If these three attributes are left empty, they will return to a default statement.
+
 
 ### Structure
 Edit `navbar/navbar.html` to manage your site links:
 ```html
-<div class="nav-content">
-    <ul class="nav-section main-section">
-        <li><a href="" class="nav-link-main">HOME</a></li>
-    </ul>
+    <div class="nav-content">
+        <!-- main -->
+        <div class="nav-main-wrapper">
+            <a href="index.html" class="nav-main-section-link">Home</a>
+        </div>
 
-    <ul class="nav-section">
-        <li><span class="nav-category">category</span></li>
-        <li><a href="" class="nav-link-sub">link</a></li>
-    </ul>
-</div>
+        <!-- category -->
+        <div class="nav-category-wrapper">
+            <a href="/" class="nav-category-link">Category</a>
+
+            <!-- sub -->
+            <div class="nav-category-sublink-wrapper">
+                <a href="/" class="nav-category-sublink">Sub-Link</a>
+            </div>
+
+        </div>
+    </div>
 ```
 Changes made to the structure will automatically reflect across all screen sizes, mobile and desktop.
 

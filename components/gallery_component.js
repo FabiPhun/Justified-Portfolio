@@ -63,7 +63,6 @@ const generateGalleryFromList = () => {
   if (galleryLists.length === 0) return false;
 
   galleryLists.forEach(galleryList => {
-    // Basis Styles anwenden (ohne gap - das kommt separat)
     applyCSSToElement(galleryList, {
       display: 'flex',
       flexWrap: 'wrap',
@@ -71,12 +70,10 @@ const generateGalleryFromList = () => {
       width: '100%'
     });
     
-    // 🔥 Gap aus image-spacing Attribut setzen, wenn vorhanden
     const imageSpacing = galleryList.getAttribute('image-spacing');
     if (imageSpacing) {
       galleryList.style.gap = imageSpacing;
     } else {
-      // Sonst Default aus GALLERY_SETTINGS
       galleryList.style.gap = GALLERY_SETTINGS.css.wrapper.gap;
     }
     
@@ -105,11 +102,9 @@ const generateGalleryFromList = () => {
 const setGalleryLayout = (container, galleryImages) => {
   if (galleryImages.length === 0 || !areImagesLoaded(galleryImages)) return;
   
-  // 🔥 Gap aus dem style oder computed Style lesen
   const gapValue = container.style.gap || getComputedStyle(container).gap;
   const gapPx = parseFloat(gapValue) || 0;
   
-  // 🔥 maxColumns aus maxImages Attribut oder Default
   const maxImagesAttr = container.getAttribute('maxImages');
   const maxColumns = maxImagesAttr ? parseInt(maxImagesAttr, 10) : GALLERY_SETTINGS.maxColumns;
   
@@ -145,7 +140,6 @@ const setGalleryLayout = (container, galleryImages) => {
                                     actualItemsInRow < columns;
 
     if (isLastRowWithFewerItems) {
-      // Letzte Reihe mit weniger Items
       const lastRowWidth = (availableWidth / columns) * actualItemsInRow;
       const lastRowGapWidth = (actualItemsInRow - 1) * gapPx;
       const lastRowAvailableWidth = lastRowWidth - lastRowGapWidth;
@@ -156,7 +150,6 @@ const setGalleryLayout = (container, galleryImages) => {
         if (item) item.style.width = `${lastRowAvailableWidth * ratio}px`;
       });
     } else {
-      // Normale Reihen
       rowImages.forEach(img => {
         const ratio = (img.naturalWidth / img.naturalHeight) / sumRatios;
         const item = img.closest(GALLERY_SETTINGS.item);
@@ -167,7 +160,6 @@ const setGalleryLayout = (container, galleryImages) => {
     }
   }
   
-  // Container Höhe zurücksetzen
   setTimeout(() => { container.style.height = 'auto'; }, 10);
 };
 
@@ -176,7 +168,6 @@ const initLayout = () => {
   const galleryLists = document.querySelectorAll(GALLERY_SETTINGS.gallery);
 
   galleryLists.forEach(galleryList => {
-    // Basis Styles anwenden
     applyCSSToElement(galleryList, {
       display: 'flex',
       flexWrap: 'wrap',
@@ -184,12 +175,10 @@ const initLayout = () => {
       width: '100%'
     });
     
-    // 🔥 Gap aus image-spacing Attribut setzen, wenn vorhanden (wichtig für init)
     const imageSpacing = galleryList.getAttribute('image-spacing');
     if (imageSpacing) {
       galleryList.style.gap = imageSpacing;
     } else if (!galleryList.style.gap) {
-      // Nur setzen wenn nicht schon durch generateGalleryFromList gesetzt
       galleryList.style.gap = GALLERY_SETTINGS.css.wrapper.gap;
     }
     
@@ -198,7 +187,6 @@ const initLayout = () => {
       galleryImages = galleryList.querySelectorAll('img');
     }
 
-    // Fallback: Generiere zufällige Bilder wenn keine vorhanden
     if (galleryImages.length === 0) {
       for (let i = 0; i < 12; i++) {
         const randomId = Math.floor(Math.random() * 1000);
@@ -214,7 +202,6 @@ const initLayout = () => {
       }
       galleryImages = galleryList.querySelectorAll(GALLERY_SETTINGS.galleryImage);
     } else {
-      // CSS auf bestehende Elemente anwenden
       galleryImages.forEach(img => {
         applyCSSToElement(img, GALLERY_SETTINGS.css.image);
         const galleryItem = img.closest(GALLERY_SETTINGS.item);
@@ -280,7 +267,6 @@ const initLightbox = () => {
     updateLightbox();
   };
 
-  // Event Listeners
   document.addEventListener('click', e => {
     const clickedImg = e.target.closest(GALLERY_SETTINGS.galleryImage);
     if (!clickedImg) return;

@@ -20,13 +20,30 @@
 <!-- navbar content -->
 <template id="navContentTemplate">
     <div class="nav-content">
-        <div class="nav-section main-section">
-            <a href="/" class="nav-link-main">HOME</a>
+        <!-- main -->
+        <div class="nav-main-wrapper">
+            <a href="index.html" class="nav-main-section-link">Home</a>
+            <a href="/" class="nav-main-section-link">About</a>
         </div>
 
-        <div class="nav-section">
-            <span class="nav-category">category</span>
-            <a href="/" class="nav-link-sub">link</a>
+        <!-- category -->
+        <div class="nav-category-wrapper">
+            <a href="/" class="nav-category-link">Category 1</a>
+
+            <!-- sub -->
+            <div class="nav-category-sublink-wrapper">
+                <a href="/" class="nav-category-sublink">Sub-Link 1</a>
+                <a href="/" class="nav-category-sublink">Sub-Link 2</a>
+            </div>
+
+        </div>
+
+        <div class="nav-category-wrapper">
+            <a href="/" class="nav-category-link">Category 2</a>
+        </div>
+        
+        <div class="nav-category-wrapper">
+            <a href="/" class="nav-category-link">Category 3</a>
         </div>
     </div>
 </template>

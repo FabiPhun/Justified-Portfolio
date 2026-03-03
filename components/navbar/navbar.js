@@ -127,7 +127,7 @@
     }
 
     function setupNavLinks() {
-        document.querySelectorAll('.nav-link-main, .nav-link-sub').forEach(link => {
+        document.querySelectorAll('.nav-main-section-link, .nav-category-link, .nav-category-sublink').forEach(link => {
             link.removeEventListener('click', navLinkHandler);
             link.addEventListener('click', navLinkHandler);
         });
