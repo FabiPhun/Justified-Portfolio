@@ -123,7 +123,8 @@ Edit `navbar/navbar.html` to manage your site links:
 
             <!-- sub -->
             <div class="nav-category-sublink-wrapper">
-                <a href="/" class="nav-category-sublink">Sub-Link</a>
+                <a href="/" class="nav-category-sublink">Sub-Link0</a>
+                <a href="/" class="nav-category-sublink">Sub-Link1</a>
             </div>
 
         </div>
