@@ -67,7 +67,6 @@ The gallery is initialized by adding a wrapper and script tag to your `index.htm
      folder-path=""
      images=""
      fc-gallery="list"
-     row-stretch="1">
   </div>
 
   <script src="components/gallery_component.js"></script>
@@ -88,8 +87,6 @@ The gallery is initialized by adding a wrapper and script tag to your `index.htm
 If the `images` attribute is left empty, the gallery will default to random images for preview purposes.
 
 Adding a `*` behind a image within the `images`tag, will result in a forced break independent of the `maxImages` tag.
-
-If the `image-spacing` and `row-stretch` are without value, they will return to a certain default.
 
 You can have as many gallery components as you like and they will all function seperately.
 
