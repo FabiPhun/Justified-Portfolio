@@ -39,18 +39,6 @@ This system provides a justified layout that automatically balances differently 
   </tr>
 </table>
 
-### Example Customized
-<table border="0" cellpadding="0" cellspacing="0" width="100%">
-  <tr>
-    <td width="75%" align="center" style="border: none;">
-      <img src="https://github.com/FabiPhun/Justified-Portfolio-Gallery/blob/main/examples/example_fullpage_default_desktop_custom.png?raw=true" style="width: 100%; display: block;">
-    </td>
-    <td width="25%" align="center" style="border: none;">
-      <img src="https://github.com/FabiPhun/Justified-Portfolio-Gallery/blob/main/examples/example_fullpage_default_mobile_custom.png?raw=true" style="width: 100%; display: block;">
-    </td>
-  </tr>
-</table>
-
 ---
 
 ## Gallery Component
