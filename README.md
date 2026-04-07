@@ -91,7 +91,6 @@ Add this to your `html` code.
       id="navbar-container"
       desktopNav=""
       mobileNav=""
-      directoryFix="">
     </div>
 
     <script src="components/navbar/navbar.js"></script>
@@ -103,7 +102,6 @@ Add this to your `html` code.
 |---------|--------------|---------|
 | `desktopNav` | turns the desktop navbar off | `desktopNav="false"` |
 | `mobileNav` | turns the mobile navbar and navmenu off | `mobileNav="false"` |
-| `directoryFix`| if the script call is within another folder, you can specify the root | `directoryFix="../"` |
 
 #### Note:
 
