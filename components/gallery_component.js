@@ -36,7 +36,6 @@ function injectStyles() {
 }
 
 function injectLightboxHTML() {
-  // Check if lightbox already exists
   if (document.querySelector('#custom-lightbox')) return;
   
   const lightboxHTML = `
@@ -53,26 +52,59 @@ function injectLightboxHTML() {
   document.body.insertAdjacentHTML('beforeend', lightboxHTML);
 }
 
-
-function generateGalleryFromWrapper(wrapper) {
-  const folderPath = wrapper.getAttribute('folder-path');
-  const imagesList = wrapper.getAttribute('images');
+function generateRandomGallery(wrapper) {
   const maxColumns = parseInt(wrapper.getAttribute('maxImages')) || GALLERY_SETTINGS.maxColumns;
   const imageSpacing = wrapper.getAttribute('image-spacing') || '5px';
+  const randomCount = Math.floor(Math.random() * 20) + 5;
   
-  if (!folderPath || !imagesList) {
-    console.warn('Gallery wrapper missing required attributes: folder-path and images');
-    return;
-  }
-
-  GALLERY_SETTINGS.maxColumns = maxColumns;
-  const imageEntries = imagesList.split(',').map(name => name.trim());
   const galleryDiv = document.createElement('div');
   galleryDiv.className = 'gallery_justified';
   galleryDiv.style.gap = imageSpacing;
   galleryDiv.style.margin = `-${imageSpacing}`;
+  galleryDiv.dataset.maxColumns = maxColumns; // Speichere maxColumns für diese Galerie
   
+  for (let i = 0; i < randomCount; i++) {
+    const width = Math.floor(Math.random() * 600) + 400;
+    const height = Math.floor(Math.random() * 600) + 400;
+    
+    const itemDiv = document.createElement('div');
+    itemDiv.className = 'gallery_item';
+    itemDiv.style.padding = imageSpacing;
+    
+    const img = document.createElement('img');
+    img.className = 'gallery_image';
+    img.src = `https://picsum.photos/${width}/${height}?random=${i}`;
+    img.alt = `random-${i}`;
+    img.setAttribute('fc-gallery', 'item');
+    
+    itemDiv.appendChild(img);
+    galleryDiv.appendChild(itemDiv);
+  }
+  
+  wrapper.innerHTML = '';
+  wrapper.appendChild(galleryDiv);
+}
 
+function generateGalleryFromWrapper(wrapper) {
+  const folderPath = wrapper.getAttribute('folder-path');
+  const imagesList = wrapper.getAttribute('images');
+  
+  if (!folderPath || !imagesList) {
+    generateRandomGallery(wrapper);
+    return;
+  }
+
+  const maxColumns = parseInt(wrapper.getAttribute('maxImages')) || GALLERY_SETTINGS.maxColumns;
+  const imageSpacing = wrapper.getAttribute('image-spacing') || '5px';
+  
+  const imageEntries = imagesList.split(',').map(name => name.trim());
+  
+  const galleryDiv = document.createElement('div');
+  galleryDiv.className = 'gallery_justified';
+  galleryDiv.style.gap = imageSpacing;
+  galleryDiv.style.margin = `-${imageSpacing}`;
+  galleryDiv.dataset.maxColumns = maxColumns; // Speichere maxColumns für diese Galerie
+  
   imageEntries.forEach(entry => {
     const hasBreak = entry.endsWith('*');
     const imageName = hasBreak ? entry.slice(0, -1).trim() : entry;
@@ -81,7 +113,6 @@ function generateGalleryFromWrapper(wrapper) {
     itemDiv.className = 'gallery_item';
     itemDiv.style.padding = imageSpacing;
     
-
     if (hasBreak) {
       itemDiv.setAttribute('data-force-break', 'true');
     }
@@ -102,24 +133,24 @@ function generateGalleryFromWrapper(wrapper) {
 
 function setGalleryLayout(container, galleryImages, gapPx) {
   if (galleryImages.length === 0) return;
+  
+  const containerMaxColumns = parseInt(container.dataset.maxColumns) || GALLERY_SETTINGS.maxColumns;
+  
   const containerWidth = container.clientWidth;
 
   let columns = Math.floor((containerWidth + gapPx) / (GALLERY_SETTINGS.minWidth + gapPx));
   columns = Math.max(columns, 1);
-  columns = Math.min(columns, GALLERY_SETTINGS.maxColumns);
+  columns = Math.min(columns, containerMaxColumns);
 
-  let currentRowStart = 0;
   let i = 0;
   
   while (i < galleryImages.length) {
     let rowEnd = i + columns;
-    let forceBreakFound = false;
     
     for (let j = i; j < Math.min(i + columns, galleryImages.length); j++) {
       const galleryItem = galleryImages[j].closest(GALLERY_SETTINGS.galleryItemSelector);
       if (galleryItem && galleryItem.hasAttribute('data-force-break')) {
         rowEnd = j + 1;
-        forceBreakFound = true;
         break;
       }
     }
@@ -161,7 +192,6 @@ function initLayout() {
   });
 }
 
-// --- LIGHTBOX  ---
 function initLightbox() {
   const lightbox = document.querySelector(GALLERY_SETTINGS.lightboxSelector);
   const lbImg = document.querySelector(GALLERY_SETTINGS.lightboxImgSelector);
@@ -169,7 +199,6 @@ function initLightbox() {
   
   let currentIndex = 0;
   let currentGalleryImages = [];
-
 
   document.addEventListener('click', function(e) {
     const clickedImg = e.target.closest(GALLERY_SETTINGS.galleryImageSelector);
@@ -230,9 +259,17 @@ function initGalleries() {
   injectLightboxHTML();
   
   const wrappers = document.querySelectorAll('.gallery_wrapper');
-  wrappers.forEach(wrapper => {
-    generateGalleryFromWrapper(wrapper);
-  });
+  
+  if (wrappers.length === 0) {
+    const randomWrapper = document.createElement('div');
+    randomWrapper.className = 'gallery_wrapper';
+    document.body.appendChild(randomWrapper);
+    generateRandomGallery(randomWrapper);
+  } else {
+    wrappers.forEach(wrapper => {
+      generateGalleryFromWrapper(wrapper);
+    });
+  }
   
   initLayout();
   initLightbox();
