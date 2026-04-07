@@ -54,7 +54,6 @@ The gallery is initialized by adding a wrapper and script tag to your `index.htm
      maxImages=""
      folder-path=""
      images=""
-     fc-gallery="list"
   </div>
 
   <script src="components/gallery_component.js"></script>
