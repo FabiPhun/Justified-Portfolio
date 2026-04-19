@@ -101,11 +101,13 @@ Add this to your `html` code.
 |---------|--------------|---------|
 | `desktopNav` | turns the desktop navbar off | `desktopNav="false"` |
 | `mobileNav` | turns the mobile navbar and navmenu off | `mobileNav="false"` |
+| `directoryFix` | defines a new location of the current html | `direcotryFix=../"` | 
 
 #### Note:
 
 If these three attributes are left empty, they will return to a default statement.
 
+If your html file should be located inside a folder bellow the standard path, you nee to let the navbar know.
 
 ### Structure
 Edit `navbar/navbar.html` to manage your site links:
