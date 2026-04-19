@@ -90,6 +90,7 @@ Add this to your `html` code.
       id="navbar-container"
       desktopNav=""
       mobileNav=""
+      directoryFix=""
     </div>
 
     <script src="components/navbar/navbar.js"></script>
